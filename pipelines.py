@@ -2,9 +2,9 @@
 
 import requests
 import logging
-from webflow_feeder_libdataprep_methods import dataprep
-from webflow_feeder_libdatapost_methods import datapost
-from webflow_feeder_libwebflow_api_methods import *
+from webflow_feeder_lib.dataprep_methods import dataprep
+from webflow_feeder_lib.datapost_methods import datapost
+from webflow_feeder_lib.webflow_api_methods import *
 import sys
 from config import config
 from tqdm import tqdm
@@ -35,7 +35,8 @@ def pipeline_collection(collection_type, raw_data_list):
     return result_data
 
 def pipeline_main(raw_data_list):
+    logging.info("there are {} new matches to be add".format(len(raw_data_list)))
     result_data_1 = pipeline_collection('MATCHES_ON_DAY', raw_data_list)
     result_data_2 = pipeline_collection('MATCHES_IN_DAYS', result_data_1)
-    pipeline_collection('MATCHES_IN_MONTHS', result_data_2)
+    # pipeline_collection('MATCHES_IN_MONTHS', result_data_2)
     logging.info(" +++++++++ pipeline complete +++++++++")

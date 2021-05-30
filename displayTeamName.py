@@ -1,4 +1,4 @@
-from webflow_feeder_libfootball_api_methods import get_team_name
+from webflow_feeder_lib.football_api_methods import get_team_name
 from pipelines import pipeline_main
 import logging
 import sys

@@ -17,12 +17,12 @@ def dataprep_mathcesOnDay(raw_data):
     data['home-team'] = raw_data['teams']['home']['name']
     data['home-logo'] = raw_data['teams']['home']['logo']
     data['home-score'] = raw_data['goals']['home']
-    data['home-article'] = 'None'
+    # data['home-article'] = 'None'
     data['away-team'] = raw_data['teams']['away']['name']
     data['away-logo'] = raw_data['teams']['away']['logo']
     data['away-score'] = raw_data['goals']['away']
-    data['away-article'] = 'None'
-    data['score-article'] = 'None'
+    # data['away-article'] = 'None'
+    # data['score-article'] = 'None'
 
     data['name'] = "Season{}_{}_{}_vs_{}".format(config['SEASON'], 
                                                 date_str, 

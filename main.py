@@ -1,4 +1,4 @@
-from webflow_feeder_libfootball_api_methods import get_mathes_data
+from webflow_feeder_lib.football_api_methods import get_mathes_data
 from pipelines import pipeline_main
 import logging
 import sys
@@ -10,7 +10,7 @@ from pipelines import pipeline_main
 
 # print(config)
 # try to get the time line 
-resp =  get_mathes_data('2021-02-25', '2021-03-05')
+resp =  get_mathes_data('2021-03-06', '2021-03-31')
 
 resp_json = resp.json()
 if resp_json['errors']:
