@@ -13,6 +13,12 @@ def get_mathes_data(from_date, to_data):
 
     return  requests.get(config['FOOTBALL_API_URL'] + '/fixtures', headers=headers, params=payload)
 
+def get_mathes_data_on_date(date):
+
+    payload = {'league': config['LEAGUE_ID'] ,'season':config['SEASON'], 'date': date}
+
+    return  requests.get(config['FOOTBALL_API_URL'] + '/fixtures', headers=headers, params=payload)
+
 def get_team_name():
     payload = {'league': config['LEAGUE_ID'] ,'season':config['SEASON']}
 
