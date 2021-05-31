@@ -7,7 +7,7 @@ from webflow_feeder_lib.datapost_methods import datapost
 from webflow_feeder_lib.webflow_api_methods import *
 import sys
 from config import config
-from tqdm import tqdm
+
 
 
 
@@ -19,7 +19,7 @@ def pipeline_collection(collection_type, raw_data_list):
     result_data = {}
     current_data_list = get_current_collection_data(collection_id_str)
 
-    for raw_data in tqdm(raw_data_list):
+    for raw_data in raw_data_list:
         if collection_type != 'MATCHES_ON_DAY':
             # MATCHES_ON_DAY is a list but other collection are dict
             raw_data = raw_data_list[raw_data]
