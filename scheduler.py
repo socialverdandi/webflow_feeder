@@ -2,15 +2,18 @@ from webflow_feeder_lib.football_api_methods import get_mathes_data_on_date
 from pipelines import pipeline_main
 import logging
 import sys
+import datetime
 
 
 logging.root.setLevel('DEBUG')
 from pipelines import pipeline_main
 
+# get yesterday date
+preDate = datetime.datetime.utcnow() - datetime.timedelta(days=1)
+preDate_str = preDate.strftime('%Y-%m-%d')
+logging.info('getting football match data on date:{}'.format(preDate_str))
 
-# print(config)
-# try to get the time line 
-resp =  get_mathes_data_on_date('2021-03-07')
+resp =  get_mathes_data_on_date(preDate_str)
 
 resp_json = resp.json()
 if resp_json['errors']:
